@@ -9,3 +9,5 @@ This application uses the following to come up with better suggestions for what 
 * SteamKit
 * Google Analytics
 * Your playtime trends
+
+#### Licensed under the Apache License 2.0 (Apache-2.0)
