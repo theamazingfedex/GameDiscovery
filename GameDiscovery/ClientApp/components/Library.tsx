@@ -15,7 +15,6 @@ export default class Library extends React.Component<RouteComponentProps<{}>, {}
   public render() {
     return <div>
       <Window>
-        <p>Hello there, {username}!</p>
         <List items={[0, 1, 2, 3]} max-width={'20vw'}/>
       </Window>
     </div>;

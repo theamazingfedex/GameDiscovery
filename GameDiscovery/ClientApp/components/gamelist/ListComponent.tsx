@@ -10,7 +10,7 @@ const List = styled.ul`
   border-width: 0 3px 0 0;
   border-radius: 5px;
   min-height: 90vh;
-  max-height: 90vh;
+  max-height: 100vh;
   overflow: auto;
 `;
 

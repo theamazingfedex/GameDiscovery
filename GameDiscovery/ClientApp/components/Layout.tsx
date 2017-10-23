@@ -24,6 +24,9 @@ const Content = styled.div`
     @media (min-width: 1280px) {
         flex: 3;
     }
+    @media (min-width: 768px) {
+        padding-top: 50px;
+    }
 
     width: 100%;
     height: 100%;
@@ -31,13 +34,13 @@ const Content = styled.div`
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
-    padding-top: 20px;
+    padding-top: 5;
     padding-left: 0;
     padding-right: 0;
     background-color: #252a30;
     color: #d6d2cb;
     ul {
-        padding-left: 10px;
+        padding-left: 0;
         list-style: none;
         li {
             padding-left: 5px;

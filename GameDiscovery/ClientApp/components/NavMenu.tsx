@@ -3,8 +3,8 @@ import { NavLink, Link } from 'react-router-dom';
 
 export class NavMenu extends React.Component<{}, {}> {
     public render() {
-        return <div className='main-nav'>
-                <div className='navbar navbar-inverse'>
+      return <nav className='navbar navbar-inverse navbar-fixed-top'>
+                <div className='container'>
                 <div className='navbar-header'>
                     <button type='button' className='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
                         <span className='sr-only'>Toggle navigation</span>
@@ -15,9 +15,8 @@ export class NavMenu extends React.Component<{}, {}> {
                     </button>
                     <Link className='navbar-brand' to={ '/' }>GameDiscovery</Link>
                 </div>
-                <div className='clearfix'></div>
-                <div className='navbar-collapse collapse'>
-                    <ul className='nav navbar-nav'>
+                <div className='navbar-collapse collapse in'>
+                    <ul className='nav navbar-nav navbar-right'>
                         <li>
                             <NavLink exact to={ '/' } activeClassName='active'>
                                 <span className='glyphicon glyphicon-home'></span> Home
@@ -41,6 +40,6 @@ export class NavMenu extends React.Component<{}, {}> {
                     </ul>
                 </div>
             </div>
-        </div>;
+        </nav>;
     }
 }
