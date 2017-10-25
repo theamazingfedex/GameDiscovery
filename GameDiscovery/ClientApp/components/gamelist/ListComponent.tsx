@@ -9,19 +9,21 @@ const List = styled.ul`
   border-color: #CCC;
   border-width: 0 3px 0 0;
   border-radius: 5px;
-  min-height: 90vh;
-  max-height: 100vh;
+  height: 100%;
   overflow: auto;
+  min-width: 200px;
+  flex-grow: 2;
+  align-items: stretch;
+  align-content: stretch;
 `;
 
-export default class ListComponent extends React.Component<{items?: any, 'max-width'?: any}, {}> {
+export default class ListComponent extends React.Component<{items?: any}, {}> {
   public render() {
     const items = this.props;
     let listItems = [];
 
-    
     return <div>
-    <List style={{'max-width': this.props.items['max-width']}}>
+    <List>
       {
         this.props.items.map((item?: any, idx?: Number) => (
           <li>{item}</li>

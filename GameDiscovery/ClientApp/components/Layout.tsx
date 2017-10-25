@@ -7,10 +7,13 @@ const Body = styled.div`
     width: 100%;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
+    flex-wrap: nowrap;
     align-items: stretch;
     align-content: stretch;
+    min-width: 700px;
+    min-height: 600px;
     
     margin:0;
 
@@ -25,16 +28,17 @@ const Content = styled.div`
         flex: 3;
     }
     @media (min-width: 768px) {
-        padding-top: 50px;
+        margin-top: 50px;
     }
 
     width: 100%;
     height: 100%;
     flex-flow: column;
     justify-content: flex-start;
+    flex-wrap: nowrap;
     align-items: stretch;
     align-content: stretch;
-    padding-top: 5;
+    margin-top: 5;
     padding-left: 0;
     padding-right: 0;
     background-color: #252a30;
@@ -65,15 +69,11 @@ const NavWrapper = styled.div`
 
 export class Layout extends React.Component<{}, {}> {
     public render() {
-        return <div className='container-fluid' style={{padding: 0, height: '100vh'}}>
-            <Body className='row'>
-                <div className=''>
-                    <NavMenu />
-                </div>
-                <Content className=''>
-                    {this.props.children}
-                </Content>
-            </Body>
-        </div>;
+      return <Body className='row'>
+        <NavMenu />
+        <Content className=''>
+          {this.props.children}
+        </Content>
+      </Body>;
     }
 }
