@@ -5,6 +5,16 @@ import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import List from './gamelist/ListComponent';
 import styled from 'styled-components';
+
+import { connect } from 'react-redux';
+import { ApplicationState } from '../store';
+import * as LibraryState from '../store/Library';
+
+type LibraryProps =
+  LibraryState.LibraryState
+  & typeof LibraryState.actionCreators
+  & RouteComponentProps<{ activeTitle: string }>; 
+
 const Window = styled.div`
   background-color: #252a30;
   color: #d6d2cb;
@@ -33,14 +43,25 @@ const InfoContainer = styled.div`
   }
 `;
 const username = 'Daniel'; // this will ideally be populated from the user profile on page load.
+const gameNames = ['Rocket League', 'Elite Dangerous', 'Beat Saber', 'Morrowind', 'Skyrim', 'Oblivion', 'Fallout 3', 'Fallout 4', 'Fallout: New Vegas', 'No Man\'s Sky'];
 
-export default class Library extends React.Component<RouteComponentProps<{}>, {}> {
+class Library extends React.Component<LibraryProps, {}> {
   public render() {
     return <Window>
-        <List items={[0, 1, 2, 3]} />
+      <List items={gameNames} onItemClicked={this.props.setActiveTitle}/>
         <InfoContainer>
-          <h3>Well hello there, {username}</h3>
+        <h3>Well hello there, {username}</h3>
+        <h4>Selected Title: {this.props.activeTitle}</h4>
         </InfoContainer>
       </Window>;
   }
 }
+
+//export default connect(
+//  (state: ApplicationState) => state.library.activeTitle,
+  //LibraryState.actionCreators)(Library);// as typeof Library;
+
+export default connect(
+  (state: ApplicationState) => state.library,
+  LibraryState.actionCreators
+)(Library) as typeof Library;
