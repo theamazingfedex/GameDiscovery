@@ -1,13 +1,13 @@
 import { spy } from 'sinon';
-import * as actions from '../../app/actions/counter';
+import * as actions from '../../app/actions/library';
 
-describe('counter actions', () => {
-  it('should increment should create increment action', () => {
-    expect(actions.increment()).toMatchSnapshot();
+describe('library actions', () => {
+  it('should add a game if addGame action', () => {
+    expect(dispatch.calledWith{ type: actions.ADD_TO_LIBRARY })
   });
 
-  it('should decrement should create decrement action', () => {
-    expect(actions.decrement()).toMatchSnapshot();
+  it('should remove a game if removeGame action', () => {
+    expect(dispatch.calledWith{ type: actions.REMOVE_FROM_LIBRARY })
   });
 
   it('should incrementIfOdd should create increment action', () => {
@@ -41,3 +41,4 @@ describe('counter actions', () => {
     }, 5);
   });
 });
+

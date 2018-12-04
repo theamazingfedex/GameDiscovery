@@ -5,7 +5,9 @@ import Root from './containers/Root';
 import { configureStore, history } from './store/configureStore';
 import './app.global.css';
 
-const store = configureStore();
+// TODO: set loadedState by loading state from disk.
+const loadedState = {};
+const store = configureStore(loadedState);
 
 render(
   <AppContainer>
