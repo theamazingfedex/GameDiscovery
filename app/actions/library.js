@@ -4,6 +4,7 @@ import { scanFolder, launchFile, getInfoFromPaths } from '../utils/gameScanner';
 
 export const ADD_TO_LIBRARY = 'ADD_TO_LIBRARY';
 export const REMOVE_FROM_LIBRARY = 'REMOVE_FROM_LIBRARY';
+export const SET_LIBRARY = 'SET_LIBRARY';
 
 export function addGame(pathToGame, title, description, executableName) {
   console.log('adding game: ', pathToGame);

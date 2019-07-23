@@ -1,5 +1,5 @@
 // @flow
-import { ADD_TO_LIBRARY, REMOVE_FROM_LIBRARY } from '../actions/library';
+import { ADD_TO_LIBRARY, REMOVE_FROM_LIBRARY, SET_LIBRARY } from '../actions/library';
 import type { GetState, Action } from './types';
 
 const initialState = {
@@ -26,6 +26,9 @@ export default function addToLibrary(state = initialState, action: Action) {
       return Object.assign(state, tempState);;
     case REMOVE_FROM_LIBRARY:
       return newState;
+    case SET_LIBRARY:
+      const libraryToSet = action.data.library;
+      return {...state, library: libraryToSet};
     default:
       return state;
   }
